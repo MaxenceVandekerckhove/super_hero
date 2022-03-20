@@ -16,17 +16,19 @@
     <h3 class="text-secondary mb-3 text-center text-capitalize">Save the world like them :</h3>
 
     <div class="d-flex justify-content-center">
-        <table class="table table-sm table-bordered mx-2 w-75 table-hover">
+        <table style="width: 95vw" class="table table-sm table-bordered mx-2 table-hover">
             <thead class="table-dark">
             <tr>
-                <th class="col-1 text-center" >Id :</th>
-                <th class="col-1 text-center" >Nickname :</th>
-                <th class="col-1 text-center" >Phone Number :</th>
-                <th class="col-2 text-center" >Realisable Incidents :</th>
-                <th class="col-1 text-center">Address :</th>
-                <th class="col-1 text-center">PostalCode :</th>
-                <th class="col-1 text-center">Town :</th>
-                <th class="col-1 text-center">Country :</th>
+                <th class="col-auto text-center" >Id :</th>
+                <th class="col-auto text-center" >Nickname :</th>
+                <th class="col-auto text-center" >Phone Number :</th>
+                <th class="col-3 text-center" >Realisable Incidents :</th>
+                <th class="col-2 text-center">Address :</th>
+                <th class="col-auto text-center">PostalCode :</th>
+                <th class="col-auto text-center">Town :</th>
+                <th class="col-auto text-center">Country :</th>
+                <th class="col-1 text-center">Latitude :</th>
+                <th class="col-1 text-center">Longitude :</th>
             </tr>
             </thead>
             <tbody>
@@ -40,6 +42,8 @@
                         <td class="text-center align-middle">[[${hero.postal_code}]]</td>
                         <td class="text-center align-middle">[[${hero.town}]]</td>
                         <td class="text-center align-middle">[[${hero.country}]]</td>
+                        <td class="text-center align-middle">[[${hero.latitude}]]</td>
+                        <td class="text-center align-middle">[[${hero.longitude}]]</td>
                     </tr>
                 </th:block>
             </tbody>

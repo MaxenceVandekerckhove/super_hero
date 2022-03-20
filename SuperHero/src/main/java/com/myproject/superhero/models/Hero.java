@@ -28,6 +28,8 @@ public class Hero {
     private String postal_code;
     private String town;
     private String country;
+    private String latitude;
+    private  String longitude;
 
     public Hero() {
         realisableIncidents = new ArrayList<>();
@@ -101,5 +103,19 @@ public class Hero {
         this.country = country;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
 
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
 }

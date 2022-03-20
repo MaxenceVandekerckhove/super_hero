@@ -36,6 +36,8 @@ public class DataRepositoryTest {
         superman.setPostal_code("NY 10308");
         superman.setTown("Staten Island");
         superman.setCountry("United States");
+        superman.setLatitude("40.56457872071059");
+        superman.setLongitude("-74.15559564911668");
 
         Hero spiderman = new Hero();
         spiderman.setNickname("SpiderMan");
@@ -44,6 +46,8 @@ public class DataRepositoryTest {
         spiderman.setPostal_code("NY 10308");
         spiderman.setTown("Staten Island");
         spiderman.setCountry("United States");
+        spiderman.setLatitude("40.56103789297096");
+        spiderman.setLongitude("-74.15017705594732");
 
         Hero supermario = new Hero();
         supermario.setNickname("SuperMario");
@@ -52,6 +56,8 @@ public class DataRepositoryTest {
         supermario.setPostal_code("NY 10308");
         supermario.setTown("Staten Island");
         supermario.setCountry("United States");
+        supermario.setLongitude("40.566534245464986");
+        supermario.setLatitude("-74.14714574253365");
 
         // Creating Incidents
 
