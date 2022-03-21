@@ -15,18 +15,21 @@
     </script>
 </head>
 
+
 <body onload="init()">
 
     <script th:inline="javascript">
     function init() {
-        const locationTest = {
-            lat : 40.59410154563492,
-            lng : -74.14394520560913
+
+        const incidentLocation = {
+            lat : [[${incidentLatitude}]],
+            lng : [[${incidentLongitude}]]
         }
 
-        const zoomLevel = 12;
 
-        const map = L.map("mapid").setView([locationTest.lat, locationTest.lng], zoomLevel);
+        const zoomLevel = 10;
+
+        const map = L.map("mapid").setView([incidentLocation.lat, incidentLocation.lng], zoomLevel);
 
         const mainLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -38,13 +41,28 @@
         });
         mainLayer.addTo(map);
 
+        // New Circle for 50km around
+
+        var latitude = [[${incidentLatitude}]];
+        var longitude = [[${incidentLongitude}]];
+
+        const kilometerCircle = L.circle([latitude,longitude], {
+            radius:25000,
+            color: 'green',
+            opacity:0.5
+        });
+
+        kilometerCircle.addTo(map);
+
+        // New Marker for Each Hero
+
         [# th:each="hero : ${heroes}"]
         - console.log("Loading " + [[${hero.nickname}]] + "!");
         var heroId = [[${hero.id}]];
         var heroNickname = [[${hero.nickname}]];
+        var heroPhoneNumber = [[${hero.phone_number}]];
         var heroLongitude = [[${hero.longitude}]];
         var heroLatitude = [[${hero.latitude}]];
-        //var heroMarkerCoords = "L.marker([" + heroLongitude + "," + heroLatitude + "])";
         var heroMarkerCoords = L.marker([heroLongitude,heroLatitude])
         var heroMarkerCoordsToString = "" + heroLongitude + "," + heroLatitude + "" ;
 
@@ -60,6 +78,7 @@
         console.log(heroMarker + heroId + ".addTo(map);");
 
         eval (heroMarker + heroId + ".addTo(map);");
+        eval (heroMarker + heroId + ".bindPopup(\"<h8>\" + heroNickname + \"</h8></br><h8>\" + heroPhoneNumber + \"</h8>\");");
             [/]
     }
     </script>

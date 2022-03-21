@@ -118,4 +118,23 @@ public class Hero {
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
+
+    // ToString Method
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "id=" + id +
+                ", nickname='" + nickname + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", realisableIncidents=" + realisableIncidents +
+                ", address='" + address + '\'' +
+                ", postal_code='" + postal_code + '\'' +
+                ", town='" + town + '\'' +
+                ", country='" + country + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                '}';
+    }
+
 }

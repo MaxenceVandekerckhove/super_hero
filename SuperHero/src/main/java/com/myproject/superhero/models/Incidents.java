@@ -21,6 +21,12 @@ public class Incidents {
 
     }
 
+    // Methods for Heroes linked to Incident
+
+    public List<Hero> getHeroes() {
+        return heroes;
+    }
+
     //Methods for Id, designation...
 
     public Integer getId() {
