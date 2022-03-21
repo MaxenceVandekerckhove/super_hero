@@ -59,7 +59,7 @@
                     <div class="d-flex flex-wrap" id="checkboxgroup">
                         <th:block th:each="incident : ${incidents}">
                             <div class="w-50">
-                                <input class="mx-2" name="chosenIncidentId" type="checkbox" th:text="${incident.designation}" th:value="${incident.id}">
+                                <input class="mx-2" required name="chosenIncidentId" type="checkbox" th:text="${incident.designation}" th:value="${incident.id}">
                             </div>
                         </th:block>
                     </div>
