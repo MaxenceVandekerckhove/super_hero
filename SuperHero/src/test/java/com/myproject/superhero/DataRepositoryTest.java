@@ -32,32 +32,35 @@ public class DataRepositoryTest {
         Hero superman = new Hero();
         superman.setNickname("SuperMan");
         superman.setPhone_number("0601020304");
-        superman.setAddress("405 Arthur Kill Rd");
+        superman.setAddress("758 Arthur Kill Rd");
         superman.setPostal_code("NY 10308");
         superman.setTown("Staten Island");
         superman.setCountry("United States");
-        superman.setLatitude("40.56457872071059");
-        superman.setLongitude("-74.15559564911668");
+        superman.setLongitude("40.56053042789074");
+        superman.setLatitude("-74.16644746712095");
+        //Amici Bakery
 
         Hero spiderman = new Hero();
         spiderman.setNickname("SpiderMan");
         spiderman.setPhone_number("0602030405");
-        spiderman.setAddress("71 Barlow Ave");
+        spiderman.setAddress("3315 Amboy Rd");
         spiderman.setPostal_code("NY 10308");
         spiderman.setTown("Staten Island");
         spiderman.setCountry("United States");
-        spiderman.setLatitude("40.56103789297096");
-        spiderman.setLongitude("-74.15017705594732");
+        spiderman.setLongitude("40.561207723844944");
+        spiderman.setLatitude("-74.13972413766571");
+        //Ocean View The Cemetery Beautiful
 
         Hero supermario = new Hero();
         supermario.setNickname("SuperMario");
         supermario.setPhone_number("0603040506");
-        supermario.setAddress("2nd St");
+        supermario.setAddress("145 Greaves Ln");
         supermario.setPostal_code("NY 10308");
         supermario.setTown("Staten Island");
         supermario.setCountry("United States");
-        supermario.setLongitude("40.566534245464986");
-        supermario.setLatitude("-74.14714574253365");
+        supermario.setLongitude("40.55365252747363");
+        supermario.setLatitude("-74.1434535235886");
+        //Villa Paradiso Ristorante Italiano
 
         // Creating Incidents
 

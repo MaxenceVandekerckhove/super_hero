@@ -17,14 +17,14 @@
 
 <body onload="init()">
 
-    <script>
+    <script th:inline="javascript">
     function init() {
         const locationTest = {
-            lat : 40.566534245464986,
-            lng : -74.14714574253365
+            lat : 40.59410154563492,
+            lng : -74.14394520560913
         }
 
-        const zoomLevel = 13;
+        const zoomLevel = 12;
 
         const map = L.map("mapid").setView([locationTest.lat, locationTest.lng], zoomLevel);
 
@@ -36,12 +36,35 @@
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiY2Fwb3JhbGNyb3NzIiwiYSI6ImNsMHp3Z2hjYTA3Ym4zam14ajU2MXhleTIifQ.ozFjJnwSjobFguV-132VKw'
         });
-
         mainLayer.addTo(map);
+
+        [# th:each="hero : ${heroes}"]
+        - console.log("Loading " + [[${hero.nickname}]] + "!");
+        var heroId = [[${hero.id}]];
+        var heroNickname = [[${hero.nickname}]];
+        var heroLongitude = [[${hero.longitude}]];
+        var heroLatitude = [[${hero.latitude}]];
+        //var heroMarkerCoords = "L.marker([" + heroLongitude + "," + heroLatitude + "])";
+        var heroMarkerCoords = L.marker([heroLongitude,heroLatitude])
+        var heroMarkerCoordsToString = "" + heroLongitude + "," + heroLatitude + "" ;
+
+        var heroMarker = "heroMarker";
+        console.log ("heroMarker = " + heroMarker);
+        console.log ("heroId = " + heroId);
+        console.log ("heroCoords = " + heroMarkerCoordsToString);
+        console.log ("heroMarkerCoords = " + heroMarkerCoords);
+        console.log("var " + heroMarker + heroId + " = " + heroMarkerCoords +";")
+
+        eval('var ' + heroMarker + heroId + '= ' + "heroMarkerCoords" + ';');
+
+        console.log(heroMarker + heroId + ".addTo(map);");
+
+        eval (heroMarker + heroId + ".addTo(map);");
+            [/]
     }
     </script>
 
-    <div style="height: 100vw; width: 100vw" id="mapid"></div>
+    <div style="height: 46vw; width: 100vw" id="mapid"></div>
 </body>
 
 </html>
