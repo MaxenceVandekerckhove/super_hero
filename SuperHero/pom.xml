@@ -60,6 +60,17 @@
             <artifactId>spring-tx</artifactId>
             <version>5.3.16</version>
         </dependency>
+        <dependency>
+            <groupId>net.minidev</groupId>
+            <artifactId>json-smart</artifactId>
+            <version>2.4.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1</version>
+            <scope>${scope}</scope>
+        </dependency>
     </dependencies>
 
     <build>

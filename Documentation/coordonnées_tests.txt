@@ -1,0 +1,5 @@
+Coordonnées Test : 
+
+ Nouveau Hero Test
+ Adresse : 49 Washington St, Newark, NJ 07102, États-Unis
+ New York : 40.75179390776881, -74.17149730437224

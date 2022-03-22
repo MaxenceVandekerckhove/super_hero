@@ -47,19 +47,38 @@ public class MapController {
         model.addAttribute("incidentLatitude", incidentLatitude);
         model.addAttribute("incidentLongitude", incidentLongitude);
 
-        // Getting the Incident chosen by ID of the checkbox.
-        Incidents chosenIncident = _incidentRepository.getById(chosenIncidentId);
-        System.out.println(chosenIncident);
+        // Variable for the Redirection
 
-        // Getting Heroes linked to Incident into a List
-        List<Hero> heroesThatCanDoThisIncident = chosenIncident.getHeroes();
-        System.out.println(heroesThatCanDoThisIncident.toString());
+        String redirectionString = "/create_map";
 
-        // Sending Heroes in Map
-        List<Hero> heroes = (List<Hero>) heroesThatCanDoThisIncident;
-        System.out.println(heroes);
-        model.addAttribute("heroes",heroesThatCanDoThisIncident);
+        if( chosenIncidentId == null )
+        {
+            System.out.println("I'm null !");
 
-        return ("/map");
+            // Display All Incidents
+            List<Incidents> incidents = (List<Incidents>) _incidentRepository.findAll();
+            model.addAttribute("incidents",incidents);
+            redirectionString = "/create_map";
+        }
+        else
+        {
+            // Getting the Incident chosen by ID of the checkbox.
+            Incidents chosenIncident = _incidentRepository.getById(chosenIncidentId);
+            System.out.println(chosenIncident);
+
+            // Getting Heroes linked to Incident into a List
+            List<Hero> heroesThatCanDoThisIncident = chosenIncident.getHeroes();
+            System.out.println(heroesThatCanDoThisIncident.toString());
+
+            // Sending Heroes in Map
+            List<Hero> heroes = (List<Hero>) heroesThatCanDoThisIncident;
+            System.out.println(heroes);
+            model.addAttribute("heroes",heroesThatCanDoThisIncident);
+
+            redirectionString = "/map";
+
+        }
+
+        return (redirectionString);
     }
 }

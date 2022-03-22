@@ -18,7 +18,7 @@
             <label>Nickname : </label>
             <input class="form-control" type="text" th:field="*{nickname}">
             <label>Phone Number : </label>
-            <input class="form-control" type="tel" th:field="*{phone_number}">
+            <input class="form-control" type="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" th:field="*{phone_number}">
             <label>Address : </label>
             <input class="form-control" type="text" th:field="*{address}">
             <label>Postal Code : </label>
@@ -27,6 +27,14 @@
             <input class="form-control" type="text" th:field="*{town}">
             <label>Country : </label>
             <input class="form-control" type="text" th:field="*{country}">
+
+
+            <label>Latitude : </label>
+            <input class="form-control" type="text" th:field="*{latitude}">
+            <label>Longitude : </label>
+            <input class="form-control" type="text" th:field="*{longitude}">
+
+
 
             <!-- Realisable Incidents information -->
 
@@ -51,6 +59,7 @@
                             }
                         }
                     }
+
                 </script>
 
                 <div class="form-control row">

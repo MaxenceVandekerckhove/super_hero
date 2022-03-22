@@ -1,18 +1,24 @@
 package com.myproject.superhero.controllers;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.myproject.superhero.models.Hero;
 import com.myproject.superhero.models.Incidents;
 import com.myproject.superhero.repository.HeroRepository;
 import com.myproject.superhero.repository.IncidentRepository;
+import net.minidev.json.JSONObject;
+import org.hibernate.sql.Template;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.JsonbHttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.swing.text.html.parser.Entity;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
